@@ -12,11 +12,8 @@
     "runArgs": [
         "--net=host",                           // 必须：共享主机网络，确保 ROS 2 节点发现机制正常
         "--ipc=host",                           // 必须：提升节点间共享内存大数据传输效率
-        "--gpus=all",                           // 必须：透传 NVIDIA 显卡用于仿真
-        "--privileged",                         // 给予更高权限访问串口、主板等底层硬件
+        //         "--privileged",                         // 给予更高权限访问串口、主板等底层硬件
         "-e", "DISPLAY=${localEnv:DISPLAY}",    // 转发显示器信号以运行 RViz/Gazebo
-        "-e", "NVIDIA_DRIVER_CAPABILITIES=all",
-        "-e", "NVIDIA_VISIBLE_DEVICES=all",
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw" // 挂载 X11 路径
     ],
     "containerEnv": {
